@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar curso</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+     <!-- Styles -->
+
+     <link rel="stylesheet" href="/stylesheets/style02.css">
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <script src="/Js/funcional.js" defer></script>
+
+    <script type="module" src="/Js/SignOutStatus.js" defer></script>
+</head>
+<body>
+    <div class="container_inicio">
+        <%- include ('Inicio.ejs') %>
+    
+        <div class="container_interactive">
+            <p>¡Realiza los cambios!</p>
+    <form id="editCourse" method="post">
+        <input type="text" id="name" name="name" placeholder="Nombre del curso"  value="<%=details.name%>">
+
+        <input type="text" id="teacherName" name="teacherName" placeholder="Nombre del docente" value="<%=details.teacherName%>">
+
+        <select id="hourWeek" name="hourWeek">
+            <option disabled selected>Horas por semana</option>
+            <option value="1" <%= details[0] && details[0].hourWeek === '1' ? 'selected' : '' %>>1 hora</option>
+            <option value="2" <%= details[0] && details[0].hourWeek === '2' ? 'selected' : '' %>>2 horas</option>
+            <option value="3" <%= details[0] && details[0].hourWeek === '3' ? 'selected' : '' %>>3 horas</option>
+            <option value="4" <%= details[0] && details[0].hourWeek === '4' ? 'selected' : '' %>>4 horas</option>
+            <option value="5" <%= details[0] && details[0].hourWeek === '5' ? 'selected' : '' %>>5 horas</option>
+            <option value="6" <%= details[0] && details[0].hourWeek === '6' ? 'selected' : '' %>>6 horas</option>
+            <option value="7" <%= details[0] && details[0].hourWeek === '7' ? 'selected' : '' %>>7 horas</option>
+            <option value="8" <%= details[0] && details[0].hourWeek === '8' ? 'selected' : '' %>>8 horas</option>
+            <option value="9" <%= details[0] && details[0].hourWeek === '9' ? 'selected' : '' %>>9 horas</option>
+            <option value="10" <%= details[0] && details[0].hourWeek === '10' ? 'selected' : '' %>>10 horas</option>
+        </select>
+
+        <select id="active" name="active">
+            <option disabled selected>Activo</option>
+            <option value="Si" <%= details[0] && details[0].active === 'Si' ? 'selected' : '' %>>Si</option>
+            <option value="No" <%= details[0] && details[0].hourWeek === 'No' ? 'selected' : '' %>>No</option>
+        </select>
+
+        <button type="submit" id="addButton" value="Update">Actualizar curso</button>
+    </form>
+
+</div>
+</body>
+</html>

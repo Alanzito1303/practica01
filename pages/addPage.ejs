@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Añadir curso</title>
+
+    <!-- Styles -->
+
+    <link rel="stylesheet" href="/stylesheets/style02.css">
+
+    <!-- SweetAlert -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11" defer></script>
+
+    <script src="/Js/funcional.js" defer></script>
+</head>
+<body>
+    <div class="container_inicio">
+    <%- include ('Inicio.ejs') %>
+
+    <div class="container_interactive">
+        <p>¡Aquí podrás añadir tus cursos!</p>
+
+    <form id="addCourse" method="post">
+        <input type="text" id="name" name="name" placeholder="Nombre del curso">
+        <input type="text" id="teacherName" name="teacherName" placeholder="Nombre del docente">
+        <select id="hourWeek" name="hourWeek">
+            <option disabled selected>Horas por semana</option>
+            <option value="1">1 hora</option>
+            <option value="2">2 horas</option>
+            <option value="3">3 horas</option>
+            <option value="4">4 horas</option>
+            <option value="5">5 horas</option>
+            <option value="6">6 horas</option>
+            <option value="7">7 horas</option>
+            <option value="8">8 horas</option>
+            <option value="9">9 horas</option>
+            <option value="10">10 horas</option>
+        </select>
+
+        <select id="active" name="active">
+            <option disabled selected>Activo</option>
+            <option value="Si">Si</option>
+            <option value="No">No</option>
+        </select>
+
+        <button type="submit" id="addButton" value="Submit">Añadir curso</button>
+    </form>
+</div>
+</div>
+</body>
+</html>
